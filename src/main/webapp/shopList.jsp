@@ -32,12 +32,6 @@
         session.setAttribute("shoplists", shoplists);
     }
     List<List<String>> shoplists = (List<List<String>>)session.getAttribute("shoplists");
-//        for (int i = 0; i <= shoplists.size(); i++) {
-//            if (!shoplists.contains(shoplist)) {
-//                shoplists.add(shoplist);
-//                break;
-//            }
-//        }
     if (!shoplists.contains(shoplist)) {
         shoplists.add(shoplist);
     }
