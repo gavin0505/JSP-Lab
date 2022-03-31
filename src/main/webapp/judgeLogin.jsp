@@ -45,11 +45,9 @@
                 break;
             default:
         }
-        response.sendRedirect("book.jsp");
     }else {
-        response.sendRedirect("error.jsp");
+        request.getRequestDispatcher("error.jsp").forward(request,response);
     }
 %>
-
 </body>
 </html>

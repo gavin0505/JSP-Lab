@@ -13,6 +13,10 @@
     身份： 商家：<input type="radio" name="id" value="solder">
     用户：<input type="radio" name="id" value="user" checked><br/>
     <input type="text" name="next" value="<%=next%>" hidden>
+    <%
+        String className = this.getClass().getSimpleName().replaceAll("_",".");
+    %>
+    <input type="text" name="className" value="<%=className%>" hidden>
     <input type="submit" value="提交"><br/>
 </form>
 <a href="<%=next%>">返回</a>

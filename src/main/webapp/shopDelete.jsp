@@ -18,7 +18,7 @@
         }
     }
     session.setAttribute("shoplists", shoplists);
-    response.sendRedirect("shopBucket.jsp");
+    request.getRequestDispatcher("shopBucket.jsp").forward(request, response);
 %>
 </body>
 </html>

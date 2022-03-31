@@ -3,16 +3,22 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-
 <html>
-<body>
 
+<head>
+    <title>首页</title>
+</head>
+<body>
 <form action="judgeLogin.jsp" method="post">
     用户名：<input name="username" type="text"/><br/>
     密码： <input name="password" type="password"><br/>
     身份：管理员<input type="radio" name="id" value="admin">
     商家<input type="radio" name="id" value="solder">
     用户<input type="radio" name="id" value="user" checked><br/>
+    <%
+        String className = this.getClass().getSimpleName().replaceAll("_",".");
+    %>
+    <input type="text" name="className" value="<%=className%>" hidden>
     <input type="submit" name="提交"><br/>
 </form>
 <a href="register.jsp?page=index.jsp">注册</a>

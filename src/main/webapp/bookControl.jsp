@@ -24,7 +24,7 @@
     List<Map<String,Object>> books = (List<Map<String,Object>>)application.getAttribute("books");
     books.add(book);
     application.setAttribute("books", books);
-    response.sendRedirect("solder.jsp");
+    request.getRequestDispatcher("solder.jsp").forward(request,response);
 %>
 </body>
 </html>

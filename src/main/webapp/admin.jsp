@@ -40,7 +40,18 @@
             out.print("</td>");
             // 权限
             out.print("<td>");
-            out.print(list.get(1));
+            switch (list.get(1)) {
+                case "admin" :
+                    out.print("管理员");
+                    break;
+                case "solder" :
+                    out.print("商家");
+                    break;
+                case "user" :
+                    out.print("用户");
+                    break;
+                default:
+            }
             out.print("</td>");
             // 添加删除操作
             if(!list.get(1).equals("admin")) {

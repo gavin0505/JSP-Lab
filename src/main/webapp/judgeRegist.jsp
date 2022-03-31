@@ -31,7 +31,7 @@
     // 判断用户名重名
     for (int i = 0; i < users.size(); i++) {
         for(String key : users.get(i).keySet()) {
-            if(key.equals(username)) {
+            if(key.equals(username) || username.isEmpty()) {
                 flag = false;
                 break;
             }
@@ -44,7 +44,8 @@
         application.setAttribute("users", users);
         response.sendRedirect(next);
     }else {
-        response.sendRedirect("error.jsp");
+        request.setAttribute("page", next);
+        request.getRequestDispatcher("error.jsp").forward(request,response);
     }
 %>
 </body>
