@@ -35,13 +35,13 @@
         session.setAttribute("type", type);
         switch (type) {
             case "admin":
-                request.getRequestDispatcher("admin.jsp").forward(request,response);
+                response.sendRedirect("admin.jsp");
                 break;
             case "solder":
-                request.getRequestDispatcher("solder.jsp").forward(request,response);
+                response.sendRedirect("solder.jsp");
                 break;
             case "user":
-                request.getRequestDispatcher("user.jsp").forward(request,response);
+                response.sendRedirect("user.jsp");
                 break;
             default:
         }
