@@ -31,7 +31,13 @@ public interface AddressRepository {
 
     /**
      * 设置默认收货地址
-     * @param address
+     * @param id
      */
-    void makeDefaultAddress(Address address);
+    void makeDefaultAddress(Integer id);
+
+    /**
+     * 取消user的默认收货地址
+     * @param userId
+     */
+    void setNotDefaultAddress(Integer userId);
 }

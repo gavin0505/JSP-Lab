@@ -1,5 +1,6 @@
 package icu.zxb996.repository.impl;
 
+import com.mysql.cj.jdbc.JdbcConnection;
 import icu.zxb996.entity.Address;
 import icu.zxb996.repository.AddressRepository;
 import icu.zxb996.utils.DBUtil;
@@ -99,17 +100,38 @@ public class AddressRepositoryImpl implements AddressRepository {
 
     /**
      * 设置默认收货地址
-     * @param address
+     * @param id
      */
     @Override
-    public void makeDefaultAddress(Address address) {
+    public void makeDefaultAddress(Integer id) {
         Connection connection = DBUtil.getConnection();
         PreparedStatement preparedStatement = null;
         String sql = "UPDATE address SET type = 1 WHERE id = ?";
 
         try{
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, address.getId());
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DBUtil.release(connection, preparedStatement, null);
+        }
+    }
+
+    /**
+     * 取消user的默认收货地址
+     * @param userId
+     */
+    @Override
+    public void setNotDefaultAddress(Integer userId) {
+        Connection connection = DBUtil.getConnection();
+        PreparedStatement preparedStatement = null;
+        String sql = "UPDATE address SET type = 0 where user_id = ? and type = 1";
+
+        try{
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, userId);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

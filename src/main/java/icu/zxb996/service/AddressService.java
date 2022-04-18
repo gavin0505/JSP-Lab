@@ -30,8 +30,14 @@ public interface AddressService {
     void deleteAddress(Integer addressId);
 
     /**
-     * 创建默认地址
-     * @param address
+     * 设置默认地址，选中的地址type设置1，其余设置0
+     * @param id
      */
-    void makeDefaultAddress(Address address);
+    void makeDefaultAddress(Integer id);
+
+    /**
+     * 取消user的默认收货地址
+     * @param userId
+     */
+    void setNotDefaultAddress(Integer userId);
 }
