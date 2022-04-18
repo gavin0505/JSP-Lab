@@ -8,10 +8,10 @@ import icu.zxb996.entity.User;
  */
 public interface UserService {
     /**
-     * 添加用户
+     * 注册 成功返回true
      * @param user
      */
-    void addUser(User user);
+    boolean addUser(User user);
 
     /**
      * 登录
@@ -20,4 +20,11 @@ public interface UserService {
      * @return
      */
     User login(String username, String password);
+
+    /**
+     * 判断重名 重名返回true
+     * @param username
+     * @return
+     */
+    boolean isName(String username);
 }

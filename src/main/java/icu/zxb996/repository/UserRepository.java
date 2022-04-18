@@ -8,7 +8,22 @@ import icu.zxb996.entity.User;
  */
 public interface UserRepository {
 
+    /**
+     * 添加用户
+     * @param user
+     */
     void addUser(User user);
 
+    /**
+     * 登录
+     * @param username
+     * @param password
+     * @return
+     */
     User login(String username, String password);
+
+    /**
+     * 查找用户
+     */
+    String findUser(String username);
 }

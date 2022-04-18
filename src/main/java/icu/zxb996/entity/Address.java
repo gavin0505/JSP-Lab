@@ -6,6 +6,8 @@ package icu.zxb996.entity;
  */
 public class Address {
 
+    private Integer id;
+
     private String province;
 
     private String city;
@@ -27,7 +29,8 @@ public class Address {
     public Address() {
     }
 
-    public Address(String province, String city, String district, String street, String detail, String name, String phone, Integer type, Integer userId) {
+    public Address(Integer id, String province, String city, String district, String street, String detail, String name, String phone, Integer type, Integer userId) {
+        this.id = id;
         this.province = province;
         this.city = city;
         this.district = district;
@@ -37,6 +40,14 @@ public class Address {
         this.phone = phone;
         this.type = type;
         this.userId = userId;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getProvince() {

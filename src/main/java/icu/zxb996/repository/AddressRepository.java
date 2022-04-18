@@ -9,27 +9,28 @@ import java.util.List;
  * @date 2022/4/18 10:40
  */
 public interface AddressRepository {
+
     /**
-     * 添加地址
+     * 增加收货地址
      * @param address
      */
     void addAddress(Address address);
 
     /**
-     * 查询地址
+     * 获取用户所有的收获地址
      * @param userId
      * @return
      */
     List<Address> getUserAddresses(int userId);
 
     /**
-     * 删除地址
+     * 删除收货地址
      * @param addressId
      */
     void deleteAddress(Integer addressId);
 
     /**
-     * 创建默认地址
+     * 设置默认收货地址
      * @param address
      */
     void makeDefaultAddress(Address address);

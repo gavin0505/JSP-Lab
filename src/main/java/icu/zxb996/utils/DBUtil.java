@@ -12,7 +12,7 @@ import java.sql.Statement;
  * @author gavin
  * @date 2022/1/12 16:01
  */
-public class JDBCTools {
+public class DBUtil {
     private static DataSource dataSource;
 
     static {
